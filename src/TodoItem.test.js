@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
-import App from './App';
+import TodoItem from './TodoItem';
 
 // Smoke Test
-test('renders App component witout crashing', () => {
-  render(<App />);
+test('renders TodoItem component witout crashing', () => {
+  render(<TodoItem />);
 });
 
 // Snapshot Test
 test('render matches snapshot', () => {
-  const { asFragment } = render(<App />);
+  const { asFragment } = render(<TodoItem />);
   expect(asFragment()).toMatchSnapshot();
 });
