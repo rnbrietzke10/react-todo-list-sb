@@ -1,4 +1,5 @@
 .todo-form-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6,9 +7,34 @@
 }
 
 .todo-form {
-  width: 100%;
+  width: 55%;
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: flex-end;
+}
+
+.todo-form-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .todo-form-input {
-  width: 30%;
+  width: 350px;
+  height: 50px;
+  border: none;
+  padding-left: 15px;
+  background-color: aliceblue;
+  border-radius: 3px;
+}
+
+.todo-form-submit-btn {
+  border: none;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  width: 100px;
+  padding: 5px;
+  height: 50px;
+  background-color: lightblue;
+  cursor: pointer;
 }

@@ -14,24 +14,29 @@ const NewTodoForm = ({ addTodo }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo({ ...todoData, id: uuidv4() });
-    setTodoData(INITIAL_STATE);
+    if (todoData.todo) {
+      addTodo({ ...todoData, id: uuidv4() });
+      setTodoData(INITIAL_STATE);
+    }
   };
 
   return (
     <div className="todo-form-container">
       <form onSubmit={handleSubmit} className="todo-form">
-        <label htmlFor="todo">Enter Todo:</label>
-        <input
-          id="todo"
-          type="text"
-          name="todo"
-          value={todoData.todo}
-          placeholder="Enter Todo Item"
-          className="todo-form-input"
-          onChange={handleChange}
-        />
-        <button>Add Todo</button>
+        <div className="todo-form-input-container">
+          <label htmlFor="todo">Enter Todo:</label>
+          <input
+            id="todo"
+            type="text"
+            name="todo"
+            value={todoData.todo}
+            placeholder="Enter Todo Item"
+            className="todo-form-input"
+            onChange={handleChange}
+          />
+        </div>
+
+        <button className="todo-form-submit-btn">Add Todo</button>
       </form>
     </div>
   );
